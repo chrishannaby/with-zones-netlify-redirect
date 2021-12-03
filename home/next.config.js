@@ -9,11 +9,11 @@ module.exports = {
       // },
       {
         source: "/blog",
-        destination: `${BLOG_URL}/blog`,
+        destination: "https://with-zones-blog.netlify.app/blog",
       },
       {
         source: "/blog/:path*",
-        destination: `${BLOG_URL}/blog/:path*`,
+        destination: "https://with-zones-blog.netlify.app/blog/:path*",
       },
     ];
   },
