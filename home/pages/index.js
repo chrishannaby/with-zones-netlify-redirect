@@ -1,14 +1,24 @@
-import Link from 'next/link'
-import dynamic from 'next/dynamic'
-import Image from 'next/image'
+import Link from "next/link";
+import dynamic from "next/dynamic";
+import Image from "next/image";
 
-const Header = dynamic(import('../components/Header'))
+const Header = dynamic(import("../components/Header"));
 
-export default function Home() {
+export async function getServerSideProps() {
+  const netBuild = process.env.BUILD_ID;
+
+  return {
+    props: {
+      netBuild,
+    },
+  };
+}
+
+export default function Home({ netBuild }) {
   return (
     <div>
       <Header />
-      <p>This is our homepage</p>
+      <p>This is our homepage. Build {netBuild}</p>
       <div>
         <a href="/blog">Blog</a>
       </div>
@@ -24,5 +34,5 @@ export default function Home() {
         height={160}
       />
     </div>
-  )
+  );
 }
