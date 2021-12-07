@@ -5,20 +5,16 @@ import Image from "next/image";
 const Header = dynamic(import("../components/Header"));
 
 export async function getServerSideProps() {
-  const netBuild = process.env.BUILD_ID;
-
   return {
-    props: {
-      netBuild,
-    },
+    props: {},
   };
 }
 
-export default function Home({ netBuild }) {
+export default function Home({}) {
   return (
     <div>
       <Header />
-      <p>This is our homepage. Build {netBuild}</p>
+      <p>This is our homepage</p>
       <div>
         <a href="/blog">Blog</a>
       </div>
