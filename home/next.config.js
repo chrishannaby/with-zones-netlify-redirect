@@ -1,19 +1,13 @@
-const { BLOG_URL } = process.env;
-
 module.exports = {
   async rewrites() {
     return [
-      // {
-      //   source: '/:path*',
-      //   destination: `/:path*`,
-      // },
       {
         source: "/blog",
-        destination: `${BLOG_URL}/blog`,
+        destination: "https://with-zones-blog.netlify.app/blog",
       },
       {
         source: "/blog/:path*",
-        destination: `${BLOG_URL}/blog/:path*`,
+        destination: "https://with-zones-blog.netlify.app/blog/:path*",
       },
     ];
   },
